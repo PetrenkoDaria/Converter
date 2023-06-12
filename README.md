@@ -5,7 +5,7 @@ Converter is a SwiftUI currency converter app for iOS and macOS using Catalyst t
 ## Demo
 |                             iOS                              |                            Widget                            |                            MacOS                             |                          Status bar                          |
 | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
-| <img src="./GIF/iOS.gif" alt="isolated" width="400"/> | <img src="./GIF/widget.gif" alt="isolated" width="400"/> | <img src="./GIF/macOS.gif" width="800"/> | <img src="./GIF/statusBar.gif" alt="isolated" width="600"/> |
+| <img src="./GIF/iOS.gif" alt="isolated" width="200"/> | <img src="./GIF/widget.gif" alt="isolated" width="200"/> | <img src="./GIF/macOS.gif" width="400"/> | <img src="./GIF/statusBar.gif" alt="isolated" width="300"/> |
 
 
 
