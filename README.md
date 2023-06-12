@@ -24,7 +24,6 @@ To get started with Converter Currency Converter, follow these steps:
 1. Clone the repository:
 
    ```
-   shellCopy code
    git clone https://github.com/petrenkodaria/converter.git
    ```
 
