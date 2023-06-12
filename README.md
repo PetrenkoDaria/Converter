@@ -1,6 +1,8 @@
 ## Converter
 
-Converter is a SwiftUI currency converter app for iOS and macOS using Catalyst to work with the status bar. MVVM architecture.![platforms](https://img.shields.io/badge/platforms-iPhone%20%7C%20iPad%20%7C%20macOS-lightgrey)  [![Минимальная версия iOS](https://img.shields.io/badge/iOS-16.0-blue.svg)](https://developer.apple.com/ios/) [![Минимальная версия iPadOS](https://img.shields.io/badge/iPadOS-16.0-blue.svg)](https://developer.apple.com/ipados/) [![Минимальная версия Mac Catalyst](https://img.shields.io/badge/MacCatalyst-13.0-blue.svg)](https://developer.apple.com/documentation/uikit/mac_catalyst) [![Минимальная версия macOS](https://img.shields.io/badge/macOS-12.0-blue.svg)](https://developer.apple.com/macos/)
+Converter is a SwiftUI currency converter app for iOS and macOS using Catalyst to work with the status bar. MVVM architecture.
+
+![platforms](https://img.shields.io/badge/platforms-iPhone%20%7C%20iPad%20%7C%20macOS-lightgrey)  [![Минимальная версия iOS](https://img.shields.io/badge/iOS-16.0-blue.svg)](https://developer.apple.com/ios/) [![Минимальная версия iPadOS](https://img.shields.io/badge/iPadOS-16.0-blue.svg)](https://developer.apple.com/ipados/) [![Минимальная версия Mac Catalyst](https://img.shields.io/badge/MacCatalyst-13.0-blue.svg)](https://developer.apple.com/documentation/uikit/mac_catalyst) [![Минимальная версия macOS](https://img.shields.io/badge/macOS-12.0-blue.svg)](https://developer.apple.com/macos/)
 
 ## Demo
 |                             iOS                              |                            Widget                            |                            MacOS                             |                          Status bar                          |
