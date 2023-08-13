@@ -15,7 +15,7 @@ class CurrencyViewModel : ObservableObject{
     
     let currency = ["USDRUB","EURRUB","EURUSD","EURGBP","EURJPY","EURKZT","EURAED","EURBYN","USDGBP","USDJPY","USDKZT","USDKGS","USDAED","USDUAH","USDTHB","USDBYN","GBPRUB","GBPJPY","GBPAUD","JPYRUB","RUBKZT","RUBAED","BYNRUB","CNYRUB","CNYUSD","CNYEUR","BTCRUB","BTCUSD","BTCEUR","BTCGBP","BTCJPY","BTCBCH","BTCXRP","BCHUSD","BCHRUB","BCHGBP","BCHEUR","BCHJPY","BCHXRP","XRPUSD","XRPRUB","XRPGBP","XRPEUR","XRPJPY","GELUSD","GELRUB","THBEUR","THBRUB","BTGUSD","ETHUSD","ZECUSD","USDVND","USDMYR","RUBAUD","THBCNY","JPYAMD","JPYAZN","IDRUSD","EURTRY","USDAMD","USDILS","RUBNZD","RUBTRY","RUBSGD","CADRUB","CHFRUB","USDAUD","USDCAD","EURAMD","EURBGN","GBPBYN","RUBAMD","RUBBGN","RUBMYR","MDLEUR","MDLRUB","ETHRUB","ETHEUR","ETHGBP","ETHJPY","RSDRUB","RSDEUR","RSDUSD","LKRRUB","LKRUSD","LKREUR","MMKRUB","MMKUSD","MMKEUR"]
     let mainPath = "https://currate.ru/api/"
-    let key = "KEY"
+    let key = "KEY"  
     
     private func loadData() async -> Dictionary<String, AnyObject>? {
         let allCurrency = currency.reduce("", { $0 == "" ? $1 : $0 + "," + $1 })
