@@ -53,7 +53,7 @@ struct Provider: IntentTimelineProvider {
     }
     
     func getCurrencyData() throws -> [String : [CurrencyConverter]] {
-        currencyObject.saveCurrencyData()
+            currencyObject.saveCurrencyData()
         let context = PersistenceController.shared.container.viewContext
         let request = CurrencyConverter.fetchRequest()
         

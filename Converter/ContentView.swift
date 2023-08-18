@@ -21,13 +21,25 @@ struct ContentView: View {
                 ProgressView()
             } else{
                 if UIDevice.current.userInterfaceIdiom == .phone {
-                    CurrencyView()
-                        .onOpenURL { url in
-                            print("🚀 Launched from widget ", url)
-                            let selected = url.absoluteString.components(separatedBy: "//").last
-                            selectedCurrency = selected ?? "EUR"
-                            currencyObject.saveCurrencyData()
+                    ZStack {
+                        CurrencyView()
+                            .onOpenURL { url in
+                                print("🚀 Launched from widget ", url)
+                                let selected = url.absoluteString.components(separatedBy: "//").last
+                                selectedCurrency = selected ?? "EUR"
+                                currencyObject.saveCurrencyData()       
                         }
+                        
+                        if currencyObject.isError {
+                            Rectangle()
+                                .ignoresSafeArea()
+                                .foregroundStyle(.ultraThinMaterial)
+                            
+                            Text("Error")
+                                .font(.system(size: 60))
+                                .fontWeight(.heavy)
+                        }
+                    }
                 } else {
                     NavigationSplitView {
                         VStack {
@@ -41,7 +53,7 @@ struct ContentView: View {
             }
         }
         .onAppear() {
-            currencyObject.saveCurrencyData()
+                currencyObject.saveCurrencyData()
         }
     }
 }
