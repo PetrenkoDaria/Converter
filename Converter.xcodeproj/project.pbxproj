@@ -14,6 +14,9 @@
 		7008F83D2A2D0BB6001A5185 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7008F83C2A2D0BB6001A5185 /* Preview Assets.xcassets */; };
 		7008F8432A2D0C22001A5185 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7008F8422A2D0C22001A5185 /* AppDelegate.swift */; };
 		70370E372A2F2E2B0053C7F2 /* StatusBarCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70370E362A2F2E2B0053C7F2 /* StatusBarCellView.swift */; };
+		70792F302AE13B62001037D9 /* GitIgnore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70792F2F2AE13B62001037D9 /* GitIgnore.swift */; };
+		70792F312AE13CF2001037D9 /* GitIgnore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70792F2F2AE13B62001037D9 /* GitIgnore.swift */; };
+		70792F322AE13CF3001037D9 /* GitIgnore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70792F2F2AE13B62001037D9 /* GitIgnore.swift */; };
 		70C49D8F2A2DF0890004F646 /* CurrencyCellMacOSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C49D8E2A2DF0890004F646 /* CurrencyCellMacOSView.swift */; };
 		70D4FB632A34A11500A0E4F0 /* StatusBarCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70370E362A2F2E2B0053C7F2 /* StatusBarCellView.swift */; };
 		70FA6D962A2E0C6600939447 /* StatusBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FA6D952A2E0C6600939447 /* StatusBarView.swift */; };
@@ -91,6 +94,7 @@
 		70345E782A372E3C0065D7A1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		70370E362A2F2E2B0053C7F2 /* StatusBarCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarCellView.swift; sourceTree = "<group>"; };
 		705335622A34FC57002B6EF6 /* LICENSE */ = {isa = PBXFileReference; explicitFileType = net.daringfireball.markdown; path = LICENSE; sourceTree = "<group>"; };
+		70792F2F2AE13B62001037D9 /* GitIgnore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitIgnore.swift; sourceTree = "<group>"; };
 		70C49D8E2A2DF0890004F646 /* CurrencyCellMacOSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCellMacOSView.swift; sourceTree = "<group>"; };
 		70FA6D952A2E0C6600939447 /* StatusBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView.swift; sourceTree = "<group>"; };
 		7945B5662A211DC90080BF94 /* CurrencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyView.swift; sourceTree = "<group>"; };
@@ -278,6 +282,7 @@
 			children = (
 				79AE85C52A1D09D20059910E /* Parser.swift */,
 				79AE85C32A1CFFF40059910E /* CurrencyViewModel.swift */,
+				70792F2F2AE13B62001037D9 /* GitIgnore.swift */,
 			);
 			path = NetworkManager;
 			sourceTree = "<group>";
@@ -442,6 +447,7 @@
 				7008F8432A2D0C22001A5185 /* AppDelegate.swift in Sources */,
 				7008F8382A2D0BB4001A5185 /* ContentView.swift in Sources */,
 				70FA6D992A2E0D4600939447 /* Converter.xcdatamodeld in Sources */,
+				70792F322AE13CF3001037D9 /* GitIgnore.swift in Sources */,
 				70FA6D962A2E0C6600939447 /* StatusBarView.swift in Sources */,
 				7008F8362A2D0BB4001A5185 /* CurrencyStatusBarApp.swift in Sources */,
 				70FA6D982A2E0D4100939447 /* Persistence.swift in Sources */,
@@ -462,6 +468,7 @@
 				794E7A2B2A28AC33001DFB8E /* Parser.swift in Sources */,
 				797934562A24966D001F0463 /* ConverterWidget.intentdefinition in Sources */,
 				79446F832A29235000364C3B /* CurrencyDecoding.swift in Sources */,
+				70792F312AE13CF2001037D9 /* GitIgnore.swift in Sources */,
 				7979345F2A249850001F0463 /* Persistence.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -478,6 +485,7 @@
 				79AE85B22A1CFB840059910E /* ContentView.swift in Sources */,
 				70D4FB632A34A11500A0E4F0 /* StatusBarCellView.swift in Sources */,
 				70FA6D9D2A2E0FBB00939447 /* StatusBarView.swift in Sources */,
+				70792F302AE13B62001037D9 /* GitIgnore.swift in Sources */,
 				79AE85BC2A1CFB850059910E /* Converter.xcdatamodeld in Sources */,
 				7945B56F2A2247B60080BF94 /* CurrencySelectionView.swift in Sources */,
 				797934572A24966D001F0463 /* ConverterWidget.intentdefinition in Sources */,

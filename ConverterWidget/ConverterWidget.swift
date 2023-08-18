@@ -53,7 +53,7 @@ struct Provider: IntentTimelineProvider {
     }
     
     func getCurrencyData() throws -> [String : [CurrencyConverter]] {
-        currencyObject.saveCurrencyData()
+            currencyObject.saveCurrencyData()
         let context = PersistenceController.shared.container.viewContext
         let request = CurrencyConverter.fetchRequest()
         
@@ -156,6 +156,7 @@ struct SimpleEntry: TimelineEntry {
     let selectedCurrency: String
 }
 
+@available(iOSApplicationExtension 17.0, *)
 struct ConverterWidgetEntryView : View {
     
     var entry: Provider.Entry
@@ -177,15 +178,7 @@ struct ConverterWidgetEntryView : View {
     //MARK: Small widget
     private var systemSmallView: some View {
         
-        ZStack{
-            Image("41")
-                .resizable()
-
-            Rectangle()
-                .foregroundColor(.black)
-                .opacity(0.2)
-
-            VStack(alignment: .leading) {
+        VStack(alignment: .leading) {
                 HStack {
                     Text("\(entry.selectedCurrency)")
                         .font(.title)
@@ -229,7 +222,7 @@ struct ConverterWidgetEntryView : View {
                                 .font(.system(size: 10))
                         }
                         Spacer()
-                        Text(roundExchange == "0.00" ? "\(String(format:"%.06f", exchange))" : roundExchange)
+                        Text(roundExchange == "0.00" ? "\(String(format:"%.03f", exchange))" : roundExchange)
                             .foregroundColor(.white)
                             .font(.title)
                             .fontWeight(.semibold)
@@ -238,23 +231,22 @@ struct ConverterWidgetEntryView : View {
                 .minimumScaleFactor(0.5)
             }
         }
-            .padding()
-            .widgetURL(URL(string: "widget-deeplink://\(entry.selectedCurrency)")!)
-    }
+        .widgetURL(URL(string: "widget-deeplink://\(entry.selectedCurrency)")!)
+        .containerBackground(for: .widget) {
+            Image("41")
+                .resizable()
+
+            Rectangle()
+                .foregroundColor(.black)
+                .opacity(0.2)
+        }
 }
     
     
     //MARK: Medium widget
     let columnsM = [GridItem(), GridItem(), GridItem()]
     private var systemMediumView: some View {
-       ZStack{
-            Image("41")
-                .resizable()
-            Rectangle()
-                .foregroundColor(.black)
-                .opacity(0.2)
-
-            VStack(alignment: .leading) {
+        VStack(alignment: .leading) {
                 HStack {
                     Text("\(entry.selectedCurrency)")
                         .font(.title)
@@ -280,7 +272,7 @@ struct ConverterWidgetEntryView : View {
                 Divider().background(.white)
                    
                 LazyVGrid(columns: columnsM) {
-                    ForEach(entry.converter.keys.sorted().prefix(15), id: \.self) { item in
+                    ForEach(entry.converter.keys.sorted().prefix(12), id: \.self) { item in
                         HStack {
                             let currencyConverter = entry.converter[item]?.first
                             let conditionExchange = currencyConverter?.currencyPair?.dropLast(3) ?? "EUR" == entry.selectedCurrency
@@ -301,7 +293,7 @@ struct ConverterWidgetEntryView : View {
                                 
                                 Spacer()
                                 
-                                Text(roundExchange == "0.00" ? "\(String(format:"%.06f", exchange))" : roundExchange)
+                                Text(roundExchange == "0.00" ? "\(String(format:"%.03f", exchange))" : roundExchange)
                                     .foregroundColor(.white)
                                     .fontWeight(.semibold)
                                     .font(.system(size: 15))
@@ -309,22 +301,22 @@ struct ConverterWidgetEntryView : View {
                         }.minimumScaleFactor(0.5)
                     }
                 }
-        }.padding()
-    }.widgetURL(URL(string: "widget-deeplink://\(entry.selectedCurrency)")!)
+            Spacer()
+        }
+        .widgetURL(URL(string: "widget-deeplink://\(entry.selectedCurrency)")!)
+                .containerBackground(for: .widget) {
+                    Image("41")
+                        .resizable()
+                    Rectangle()
+                        .foregroundColor(.black)
+                        .opacity(0.2)
+                }
 }
     
     //MARK: Large widget
     let columnsL = [GridItem(), GridItem()]
     private var systemLargeView: some View {
-        ZStack{
-            Image("41")
-                .resizable()
-
-            Rectangle()
-                .foregroundColor(.black)
-                .opacity(0.15)
-           
-            VStack(alignment: .leading) {
+        VStack(alignment: .leading) {
                 HStack {
                     Text("\(entry.selectedCurrency)")
                         .font(.title)
@@ -385,12 +377,23 @@ struct ConverterWidgetEntryView : View {
                     }
                 }
                 Spacer()
-            }.widgetURL(URL(string: "widget-deeplink://\(entry.selectedCurrency)")!)
-        .padding()
-        }
+            
+            }
+            .widgetURL(URL(string: "widget-deeplink://\(entry.selectedCurrency)")!)
+//            .padding()
+//            .widgetURL(URL(string: "widget-deeplink://\(entry.selectedCurrency)")!)
+            .containerBackground(for: .widget) {
+                Image("41")
+                    .resizable()
+                Rectangle()
+                    .foregroundColor(.black)
+                    .opacity(0.2)
+            }
+        
     }
 }
 
+@available(iOSApplicationExtension 17.0, *)
 struct ConverterWidget: Widget {
     let kind: String = "ConverterWidget"
 
@@ -398,11 +401,12 @@ struct ConverterWidget: Widget {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
             ConverterWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName("Converter Widget")
+        .description("Select the currency you want to display in the widget")
     }
 }
 
+@available(iOSApplicationExtension 17.0, *)
 struct ConverterWidget_Previews: PreviewProvider {
     static var previews: some View {
         Group {
